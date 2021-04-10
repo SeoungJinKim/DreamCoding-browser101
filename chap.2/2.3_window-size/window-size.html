@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+  <title>Window Size</title>
+</head>
+
+<body>
+  <div class="container">
+    <span class="screen"></span>
+    <span class="outer"></span>
+    <span class="inner"></span>
+    <span class="client"></span>
+  </div>
+  <script>
+    // https://kellegous.com/j/2013/02/27/innertext-vs-textcontent/
+    // innerText는 사용자의 눈에 보이는 정보이다.
+    // 예를 들어, visibility hidden을 주면 출력되지 않는다.
+    // innerText보다 textcontent가 더 빠름
+
+    // https://unicorntears.dev/posts/queryselectorall-vs-getelementsbyclassname/
+    // getElementsByClassName는 안되고 querySelector는 가능했다.
+
+    let screen = document.querySelector('.screen')
+    console.log(screen)
+    let outer = document.querySelector('.outer')
+    let inner = document.querySelector('.inner')
+    let client = document.querySelector('.client')
+    function updateSize() {
+
+      screen.innerText = `window.screen: ${window.screen.width}, ${window.screen.height}`
+      outer.innerText = `window.outer: ${window.outerWidth}, ${window.outerHeight}`
+      inner.innerText = `window.inner: ${window.innerWidth}, ${window.innerHeight}`
+      client.innerText = `documentElement.client: ${document.documentElement.clientWidth}, ${document.documentElement.clientHeight}`
+    }
+    window.addEventListener('resize', updateSize)
+    window.addEventListener('load', updateSize)
+  </script>
+</body>
+
+</html>
