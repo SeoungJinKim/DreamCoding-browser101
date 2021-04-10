@@ -1,0 +1,9 @@
+.container {
+  display: inline-block;
+  padding: 16px;
+  background-color: lightsalmon;
+}
+
+.container span {
+  display: block;
+}
