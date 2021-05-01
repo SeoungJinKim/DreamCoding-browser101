@@ -1,0 +1,14 @@
+body {
+  background-color: black;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  background-color: silver;
+  margin: 5px;
+}
+
+.box.special {
+  background-color: gold;
+}
