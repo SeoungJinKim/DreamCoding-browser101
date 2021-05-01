@@ -29,6 +29,22 @@
     <div class="box"></div>
     <div class="box"></div>
   </div>
+  <script>
+    const specialBox = document.querySelector('.box.special')
+
+    function printCoordinates(e) {
+      const client = specialBox.getBoundingClientRect()
+
+      console.log(client)
+      const { x: clientX, y: clientY } = client
+      console.log(`ClientX: ${clientX}, ClientY: ${clientY}`)
+
+      const { pageX, pageY } = e
+      console.log(`PageX: ${pageX}, PageY: ${pageY}`)
+    }
+
+    specialBox.addEventListener('click', printCoordinates)
+  </script>
 </body>
 
 </html>
