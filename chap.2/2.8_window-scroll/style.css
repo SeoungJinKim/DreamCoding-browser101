@@ -1,0 +1,27 @@
+body {
+  background-color: black;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  background-color: silver;
+  margin: 5px;
+}
+
+.box.special {
+  background-color: gold;
+}
+
+button {
+  background-color: white;
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+aside {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
