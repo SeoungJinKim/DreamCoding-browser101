@@ -29,8 +29,8 @@
     <div class="box"></div>
     <div class="box"></div>
     <aside>
-      <button>Scroll by 100px(y)</button>
-      <button>Scroll to 100px(y)</button>
+      <button onclick="window.scrollBy(0,100)">Scroll by 100px(y)</button>
+      <button onclick="window.scrollTo(0,100)">Scroll to 100px(y)</button>
       <button class="scroll-into">Scroll into special</button>
     </aside>
   </div>
@@ -48,7 +48,14 @@
       console.log(`PageX: ${pageX}, PageY: ${pageY}`)
     }
 
+    function scrollIntoSpecial() {
+      const specialRect = specialBox.getBoundingClientRect()
+      const { y: specialRectY } = specialRect
+      window.scrollBy(0, specialRectY)
+    }
+
     specialBox.addEventListener('click', printCoordinates)
+    scrollIntoBtn.addEventListener('click', scrollIntoSpecial)
   </script>
 </body>
 
